@@ -1,0 +1,1 @@
+@vendor1 = Vendor.new({'name' => 'McDonalds'})
