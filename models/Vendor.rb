@@ -1,3 +1,5 @@
+require './db/SqlRunner'
+
 class Vendor
 
   attr_accessor :name
