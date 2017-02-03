@@ -17,3 +17,8 @@ post '/vendors' do
   @vendor.save
   return "saved"
 end
+
+get '/vendors/:id' do
+  @vendor = Vendor.find_by_id(params[:id])
+  erb(:"/vendors/show")
+end

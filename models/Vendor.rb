@@ -2,10 +2,11 @@ require './db/SqlRunner'
 
 class Vendor
 
+  attr_reader :id
   attr_accessor :name
 
   def initialize(options)
-    @id = options['id']
+    @id = options['id'].to_i
     @name = options['name']
   end
 
@@ -22,7 +23,7 @@ class Vendor
   end
 
   def update()
-    sql = "UPDATE vendors SET name = '#{name}' WHERE id = #{@id};"
+    sql = "UPDATE vendors SET name = '#{@name}' WHERE id = #{@id};"
     SqlRunner.run(sql)
 
   end
@@ -30,6 +31,12 @@ class Vendor
   def delete()
     sql = "DELETE FROM vendors WHERE id = #{@id};"
     SqlRunner.run(sql)
+  end
+
+  def self.find_by_id(search_id)
+    sql = "SELECT * FROM vendors WHERE id = #{search_id};"
+    vendor = SqlRunner.run(sql).first
+    return Vendor.new(vendor)
   end
 
 end

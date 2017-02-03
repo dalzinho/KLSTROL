@@ -1,7 +1,8 @@
 <h1>Burger Vendors</h1>
 
 <% for vendor in @vendors %>
-<p><%= vendor.name %></p>
+<a href="/vendors/<%= vendor.id %>"
+<p><%= vendor.name %></p></a>
 <% end %>
 
 <a href="vendors/new">Add a new vendor</a>
