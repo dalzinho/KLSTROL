@@ -11,7 +11,9 @@
   <tbody>
     <% for burger in @burgers %>
     <tr>
-      <td><%= burger.name %></td>
+      <td>
+      <a href="burgers/<%= burger.id %>"><%= burger.name %></a>
+      </td>
       <td><%= burger.price %></td>
       <td><%= burger.vendor_id %></td>
     </tr>

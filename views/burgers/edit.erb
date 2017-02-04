@@ -1,0 +1,22 @@
+<div class="edit-form">
+
+  <form action="/burgers/<%= @burger.id %>" method="post">
+
+    <label>
+      Burger Name:
+      <input type="text" name="name" value="<%= @burger.name %>">
+    </label>
+
+    <label>
+      Price:
+      <input type="number" name="price" value="<%= @burger.price %>">
+    </label>
+
+    <label>
+    Vendor:
+    </label>
+    
+    <input type="number" name="vendor_id" value="<%= @burger.vendor_id %>">
+    <input type="submit" value="Update">
+  </form>
+</div>

@@ -23,7 +23,9 @@ class Burger
   end
 
   def self.update(options)
-    sql = "UPDATE burgers SET (name, price, vendor_id) = ('#{options['name']}, #{options['price']}, #{options['vendor_id']});"
+    sql = "UPDATE burgers
+    SET (name, price, vendor_id) = 
+    ('#{options['name']}', #{options['price']}, #{options['vendor_id']}) WHERE id = #{options['id']};"
     SqlRunner.run(sql)
   end
 
