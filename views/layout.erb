@@ -1,1 +1,48 @@
-<%= yield %>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>KLSTROL</title>
+  <link rel="stylesheet" type="text/css" href="/styles/structure.css">
+  <link rel="stylesheet" type="text/css" href="/styles/tables.css">
+
+</head>
+
+<!-- header contains left-nav, site name and right-nav -->
+<body>
+
+  <div class="header">
+
+    <nav class="left-header">
+      <ul>
+        <li>
+          <a href="/">Home</a>
+        </li>
+        <li>
+          <a href="/vendors">Vendors</a>
+        </li>
+      </ul>
+    </nav>
+ 
+  <h1>KLSTROL</h1>
+
+  <nav class="right-header">
+    <ul>
+    <li>
+    this
+    </li>
+    <li>
+    <a href = "/burgers">Burgers</a>
+    </li>
+    <li>the other</li>
+  </nav>
+
+</div>
+
+<div class="main">
+  <%= yield %>
+</div>
+</body>
+</html>
+
+
+

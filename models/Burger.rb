@@ -21,14 +21,20 @@ class Burger
     return result.map { |burger| Burger.new(burger)}
   end
 
-  def update()
-    sql = "UPDATE burgers SET (name, price, vendor_id) = ('#{@name}', #{@price}, #{@vendor_id});"
+  def self.update(options)
+    sql = "UPDATE burgers SET (name, price, vendor_id) = ('#{options['name']}, #{options['price']}, #{options['vendor_id']});"
     SqlRunner.run(sql)
   end
 
-  def delete()
-    sql = "DELETE FROM burgers WHERE id = #{@id};"
+  def self.delete(id)
+    sql = "DELETE FROM burgers WHERE id = #{id};"
     SqlRunner.run(sql)
+  end
+
+  def self.find(id)
+    sql = "SELECT * FROM burgers WHERE id = #{id};"
+    result = SqlRunner.run(sql).first
+    return Burger.new(result)
   end
 
 end

@@ -1,1 +1,20 @@
-<h1>Burgers</h1>
+<h2>Burgers</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Price</th>
+      <th>Vendor</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% for burger in @burgers %>
+    <tr>
+      <td><%= burger.name %></td>
+      <td><%= burger.price %></td>
+      <td><%= burger.vendor_id %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

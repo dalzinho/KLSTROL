@@ -11,13 +11,13 @@ CREATE TABLE burgers(
   id SERIAL4 primary key,
   name VARCHAR(255),
   price NUMERIC(4,2),
-  vendor_id INT4 references vendors(id)
+  vendor_id INT4 references vendors(id) ON DELETE CASCADE
 );
 
 CREATE TABLE deals(
   id SERIAL4 primary key,
   title VARCHAR(255),
-  burger_id INT4 references burgers(id),
+  burger_id INT4 references burgers(id) ON DELETE CASCADE,
   day VARCHAR(255)
 );
 

@@ -1,8 +1,19 @@
-<h1>Burger Vendors</h1>
 
-<% for vendor in @vendors %>
-<a href="/vendors/<%= vendor.id %>"
-<p><%= vendor.name %></p></a>
-<% end %>
+<h2>Burger Vendors</h2>
 
-<a href="vendors/new">Add a new vendor</a>
+<table>
+  <tbody>
+    <tr>
+      <th>Delicious burgers from:</th>
+    </tr>
+    <% for vendor in @vendors %>
+    <tr>
+      <td>
+        <a href="/vendors/<%= vendor.id %>"
+          <p><%= vendor.name %></p></a>
+        </td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <a href="vendors/new">Add a new vendor</a>
