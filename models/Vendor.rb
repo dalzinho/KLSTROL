@@ -22,14 +22,15 @@ class Vendor
     return result.map { |vendor| Vendor.new(vendor)}
   end
 
-  def update()
-    sql = "UPDATE vendors SET name = '#{@name}' WHERE id = #{@id};"
+  def self.update(options)
+    sql = "UPDATE vendors SET 
+          name = '#{options['name']}'
+          WHERE id = '#{options['id']}';"
     SqlRunner.run(sql)
-
   end
 
-  def delete()
-    sql = "DELETE FROM vendors WHERE id = #{@id};"
+  def self.destroy(id)
+    sql = "DELETE FROM vendors WHERE id = #{id};"
     SqlRunner.run(sql)
   end
 

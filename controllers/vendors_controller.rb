@@ -22,3 +22,13 @@ get '/vendors/:id' do
   @vendor = Vendor.find_by_id(params[:id])
   erb(:"/vendors/show")
 end
+
+get '/vendors/:id/edit' do
+  @vendor = Vendor.find_by_id(params[:id])
+  erb(:"vendors/edit")
+end
+
+post '/vendors/:id' do
+  @vendor = Vendor.update(params)
+  redirect to ("/vendors/#{params[:id]}")
+  end
