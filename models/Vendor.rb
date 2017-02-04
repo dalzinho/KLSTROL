@@ -34,7 +34,7 @@ class Vendor
     SqlRunner.run(sql)
   end
 
-  def self.find_by_id(search_id)
+  def self.find(search_id)
     sql = "SELECT * FROM vendors WHERE id = #{search_id};"
     vendor = SqlRunner.run(sql).first
     return Vendor.new(vendor)

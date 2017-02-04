@@ -12,37 +12,47 @@
 
   <div class="header">
 
-    <nav class="left-header">
+    <div class="site-header">
+      <h1>KLSTROL</h1>
+    </div>
+
+    <div class="nav-bar">
+      <nav>
+        <ul>
+          <li>
+            <a href="/">Home</a>
+          </li>
+          <li>
+            this
+          </li>
+          <li>
+            that
+          </li>
+          <li>
+            <a href="/vendors">Vendors</a>
+          </li>
+          <li>
+            <a href = "/burgers">Burgers</a>
+          </li>
+          <li>the other</li>
+        </ul>
+      </nav>
+    </div>
+
+
+    <nav class="right-header">
       <ul>
-        <li>
-          <a href="/">Home</a>
-        </li>
-        <li>
-          <a href="/vendors">Vendors</a>
-        </li>
-      </ul>
-    </nav>
- 
-  <h1>KLSTROL</h1>
 
-  <nav class="right-header">
-    <ul>
-    <li>
-    this
-    </li>
-    <li>
-    <a href = "/burgers">Burgers</a>
-    </li>
-    <li>the other</li>
-  </nav>
+        
+      </nav>
 
-</div>
+    </div>
 
-<div class="main">
-  <%= yield %>
-</div>
-</body>
-</html>
+    <div class="main">
+      <%= yield %>
+    </div>
+  </body>
+  </html>
 
 
 

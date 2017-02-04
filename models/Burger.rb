@@ -1,5 +1,6 @@
 class Burger
 
+  attr_reader :id
   attr_accessor :name, :price, :vendor_id
 
   def initialize(options)

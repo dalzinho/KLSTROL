@@ -19,12 +19,12 @@ post '/vendors' do
 end
 
 get '/vendors/:id' do
-  @vendor = Vendor.find_by_id(params[:id])
+  @vendor = Vendor.find(params[:id])
   erb(:"/vendors/show")
 end
 
 get '/vendors/:id/edit' do
-  @vendor = Vendor.find_by_id(params[:id])
+  @vendor = Vendor.find(params[:id])
   erb(:"vendors/edit")
 end
 
