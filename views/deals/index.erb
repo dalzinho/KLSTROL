@@ -13,7 +13,7 @@
 
 <% for deal in @deals %>
 <tr>
-<td><%= deal.title %></td>
+<td><a href="/deals/<%= deal.id %>"><%= deal.title %></a></td>
 <td><%= deal.burger_id %></td>
 <td><%= deal.day %></td>
 </tr>

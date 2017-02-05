@@ -1,4 +1,11 @@
 <div class="edit-selection">
 <h2><%= @deal.title %></h2>
+<form action="/deals/<%= @deal.id %>/edit" method = "get" />
+<input type="submit" value="Edit" />
+</form>
+
+<form action="/deals/<%= @deal.id %>/delete" method= "post" />
+<input type="submit" value="Delete" />
+</form>
 
 </div>

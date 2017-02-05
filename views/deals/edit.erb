@@ -1,0 +1,35 @@
+<div class="edit-form">
+
+  <form action="/deals/<%= @deal.id %>" method="post">
+    <label>
+      Deal Title:
+      <input type="text" name="title" value ="<%= @deal.title %>" />
+    </label>
+
+    <label>
+      burger:
+      <select name = "burger_id">
+        <% for burger in Burger.all %>
+
+        <option value="<%= burger.id %>"><%= burger.name %></option>
+
+        <% end %>
+      </select>
+    </label>
+
+    <label>
+      Discounted on:
+      <select name="day">
+        <option value="Monday">Monday</option>
+        <option value="Tuesday">Tuesday</option>
+        <option value="Wednesday">Wednesday</option>
+        <option value="Thursday">Thursday</option>
+        <option value="Friday">Friday</option>
+        <option value="Saturday">Saturday</option>
+        <option value="Sunday">Sunday</option>
+      </select>
+    </label>
+    <input type="submit" value = "Add Deal" />
+  </form>
+
+</div>

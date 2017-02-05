@@ -22,8 +22,8 @@ class Deal
     return result.map { |deal| Deal.new(deal) }
   end
 
-  def update()
-    sql = "UPDATE deals SET (title, burger_id, day) = ('#{@title}', #{@burger_id}, '#{@day}');"
+  def self.update(options)
+    sql = "UPDATE deals SET (title, burger_id, day) = ('#{options['title']}', #{options['burger_id']}, '#{options['day']}') WHERE id = #{options['id']} ;"
     SqlRunner.run(sql)
   end
 

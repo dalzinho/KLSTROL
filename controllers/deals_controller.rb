@@ -17,7 +17,17 @@ post '/deals' do
   redirect to ('/deals')
 end
 
+get '/deals/:id/edit' do
+  @deal = Deal.find(params[:id])
+  erb(:"/deals/edit")
+end
+
 get '/deals/:id' do
   @deal = Deal.find(params[:id])
   erb(:"deals/show")
 end
+
+post '/deals/:id' do
+  @deal = Deal.update(params)
+  redirect to ('/deals')
+  end
