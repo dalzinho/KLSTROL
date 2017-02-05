@@ -1,0 +1,19 @@
+<form action="/burgers" method="post">
+<label>
+Burger Name: <input type="text" name="name">
+</label>
+
+<label>
+Burger Price: <input type="number" name="price">
+</label>
+
+<label>
+Available from:
+<select name="vendor_id">
+
+<% for vendor in Vendor.all %>
+<option value = "<%= vendor.id %>"><%= vendor.name %></option>
+<% end %>
+</select>
+<input type="submit" value = "Add Burger">
+</label>

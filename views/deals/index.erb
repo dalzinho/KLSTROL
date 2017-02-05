@@ -1,1 +1,24 @@
 <h1>Deals!</h1>
+
+<table>
+<thead>
+  <tr>
+  <th>Deal Title</th>
+  <th>Burger</th>
+  <th>Day</th>
+  </tr>
+</thead>
+<tbody>
+
+
+<% for deal in @deals %>
+<tr>
+<td><%= deal.title %></td>
+<td><%= deal.burger_id %></td>
+<td><%= deal.day %></td>
+</tr>
+<% end %>
+</tbody>
+</table>
+
+<a href="/deals/new">Add a new deal</a>

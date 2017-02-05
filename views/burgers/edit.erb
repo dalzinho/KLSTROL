@@ -13,10 +13,12 @@
     </label>
 
     <label>
-    Vendor:
-    </label>
-    
-    <input type="number" name="vendor_id" value="<%= @burger.vendor_id %>">
-    <input type="submit" value="Update">
-  </form>
-</div>
+      Where can you buy this tasty morsel?
+      <select name="vendor_id">
+        <% for vendor in Vendor.all %>
+        <option value="<%= vendor.id %>"><%= vendor.name %></option>
+        <% end %>
+      </label>
+      <input type="submit" value="Update">
+    </form>
+  </div>

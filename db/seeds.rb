@@ -24,9 +24,17 @@ require 'pry-byebug'
 @burger2.save
 @burger3.save
 
-@deal1 = Deal.new({'title' => 'Big Fat Friday', 'burger_id' => 1, 'day' => 'Wednesday'})
-@deal1.save
+@deal1 = Deal.new({'title' => 'Mental Monday', 'burger_id' => 1, 'day' => 'Monday'})
+@deal2 = Deal.new({'title' => 'Cheeky Tuesday', 'burger_id' => 2, 'day' => 'Tuesday'})
+@deal3 = Deal.new({'title' => 'Waistline Wednesday', 'burger_id' => 3, 'day' => 'Wednesday'})
+@deal4 = Deal.new({'title' => 'Thank Thursday', 'burger_id' => 2, 'day' => 'Thursday'})
+@deal5 = Deal.new({'title' => 'Big Fat Friday', 'burger_id' => 1, 'day' => 'Friday'})
 
+@deal1.save
+@deal2.save
+@deal3.save
+@deal4.save
+@deal5.save
 
 binding.pry
 nil

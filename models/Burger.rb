@@ -40,4 +40,9 @@ class Burger
     return Burger.new(result)
   end
 
+  def get_vendor_name()
+    sql = "SELECT v.name FROM vendors v INNER JOIN burgers b ON b.vendor_id = v.id WHERE b.id = #{@id};"
+    return SqlRunner.run(sql).first['name']
+  end
+
 end
