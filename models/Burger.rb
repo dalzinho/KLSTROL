@@ -22,6 +22,8 @@ class Burger
     return result.map { |burger| Burger.new(burger)}
   end
 
+
+
   def self.update(options)
     sql = "UPDATE burgers
     SET (name, price, vendor_id) = 
@@ -43,6 +45,11 @@ class Burger
   def get_vendor_name()
     sql = "SELECT v.name FROM vendors v INNER JOIN burgers b ON b.vendor_id = v.id WHERE b.id = #{@id};"
     return SqlRunner.run(sql).first['name']
+  end
+
+  def self.get_by_vendor(search_id)
+    sql = "SELECT * FROM burgers WHERE vendor_id = #{search_id};"
+    return SqlRunner.run(sql).map { |burger| Burger.new(burger)}
   end
 
 end

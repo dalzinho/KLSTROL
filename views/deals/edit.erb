@@ -8,10 +8,10 @@
 
     <label>
       burger:
-      <select name = "burger_id">
-        <% for burger in Burger.all %>
+      <select name = "vendor_id">
+        <% for vendor in Vendor.all %>
 
-        <option value="<%= burger.id %>"><%= burger.name %></option>
+        <option value="<%= vendor.id %>"><%= vendor.name %></option>
 
         <% end %>
       </select>

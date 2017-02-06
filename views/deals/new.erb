@@ -6,9 +6,9 @@
 
   <label>
     Burger:
-    <select name="burger_id">
+    <select name="vendor_id">
       <% for deal in Deal.all() %>
-      <option value="<%= deal.burger_id %>"> <%= deal.get_burger %></option>
+      <option value="<%= deal.vendor_id %>"> <%= deal.get_vendor %></option>
       <% end %>
     </select>
   </label>

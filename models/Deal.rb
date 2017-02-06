@@ -1,17 +1,17 @@
 class Deal
 
   attr_reader :id
-  attr_accessor :title, :burger_id, :day
+  attr_accessor :title, :vendor_id, :day
 
   def initialize(options)
     @id = options['id']
     @title = options['title']
-    @burger_id = options['burger_id']
+    @vendor_id = options['vendor_id']
     @day = options['day']
   end
 
   def save()
-    sql = "INSERT INTO deals (title, burger_id, day) VALUES ('#{@title}', #{@burger_id}, '#{@day}') RETURNING *;"
+    sql = "INSERT INTO deals (title, vendor_id, day) VALUES ('#{@title}', #{@vendor_id}, '#{@day}') RETURNING *;"
     result = SqlRunner.run(sql)
     @id = result.first['id']
   end
@@ -23,17 +23,22 @@ class Deal
   end
 
   def self.update(options)
-    sql = "UPDATE deals SET (title, burger_id, day) = ('#{options['title']}', #{options['burger_id']}, '#{options['day']}') WHERE id = #{options['id']} ;"
+    sql = "UPDATE deals SET (title, vendor_id, day) = ('#{options['title']}', #{options['vendor_id']}, '#{options['day']}') WHERE id = #{options['id']} ;"
     SqlRunner.run(sql)
   end
 
-  def delete()
-    sql = "DELETE FROM deals WHERE id = #{@id}"
+  def self.delete(id)
+    sql = "DELETE FROM deals WHERE id = #{id};"
     SqlRunner.run(sql)
   end
 
   def get_burger
-    sql = "SELECT b.name FROM burgers b INNER JOIN deals d ON d.burger_id = b.id WHERE d.id = #{@id};"
+    sql = "SELECT b.name FROM burgers b INNER JOIN deals d ON d.vendor_id = b.id WHERE d.id = #{@id};"
+    return SqlRunner.run(sql).first['name']
+  end
+
+  def get_vendor()
+    sql = "SELECT v.name FROM vendors v INNER JOIN deals d ON v.id = d.vendor_id WHERE d.id = #{@id};"
     return SqlRunner.run(sql).first['name']
   end
 
@@ -42,6 +47,8 @@ class Deal
     result = SqlRunner.run(sql).first
     return Deal.new(result)
   end
+
+  
 
   # def get_vendor
   #   sql = "SELECT v.name FROM vendors v INNER JOIN deals d ON d.vendor_id = v.id WHERE d.id = #{@id};"

@@ -1,11 +1,31 @@
 <div class="edit-selection">
-<h2><%= @deal.title %></h2>
-<form action="/deals/<%= @deal.id %>/edit" method = "get" />
-<input type="submit" value="Edit" />
-</form>
+  <h2><%= @deal.title %></h2>
+  <h3><%= @deal.get_vendor %></h3>
 
-<form action="/deals/<%= @deal.id %>/delete" method= "post" />
-<input type="submit" value="Delete" />
-</form>
+  <table>
+    <thead>
+      <tr>
+        <th>Burgers Included</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% for burger in @burgers %>
+      <tr>
+        <td><%= burger.burger_name %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <form action="/deals/<%= @deal.id %>/add" method = "get" />
+    <input type = "submit" value = "Add Burgers to this Deal" />
+  </form>
+  <form action="/deals/<%= @deal.id %>/edit" method = "get" />
+    <input type="submit" value="Edit" />
+  </form>
+
+  <form action="/deals/<%= @deal.id %>/delete" method= "post" />
+    <input type="submit" value="Delete" />
+  </form>
 
 </div>

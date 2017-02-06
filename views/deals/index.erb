@@ -4,7 +4,7 @@
 <thead>
   <tr>
   <th>Deal Title</th>
-  <th>Burger</th>
+  <th>Vendor</th>
   <th>Day</th>
   </tr>
 </thead>
@@ -14,7 +14,7 @@
 <% for deal in @deals %>
 <tr>
 <td><a href="/deals/<%= deal.id %>"><%= deal.title %></a></td>
-<td><%= deal.burger_id %></td>
+<td><%= deal.get_vendor %></td>
 <td><%= deal.day %></td>
 </tr>
 <% end %>

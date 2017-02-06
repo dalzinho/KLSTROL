@@ -1,0 +1,17 @@
+<h2><%= @deal.title %></h2>
+<h3><%= @deal.get_vendor %></h3>
+
+<form action="/deals/<%= @deal.id%>/add" method="post">
+  <label>
+    Select a burger to add to the deal:
+    <select name = "burger_id">
+
+      <% for burger in @burgers %>
+      <option value="<%= burger.id %>"><%= burger.name %></option>
+      <% end %>
+    </select>
+  </label>
+  
+  <input type="hidden" name = "deal_id" value = "<%= @deal.id%>"/>
+  <input type="submit" value = "Add this Burger" />
+</form>
