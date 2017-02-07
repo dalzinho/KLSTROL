@@ -48,6 +48,11 @@ class Deal
     return Deal.new(result)
   end
 
+  def self.get_today()
+    sql = "SELECT * FROM deals WHERE day = '#{Time.new.strftime('%A')}';"
+    result = SqlRunner.run(sql)
+    return result.map { |deal| Deal.new(deal) }
+  end
   
 
   # def get_vendor

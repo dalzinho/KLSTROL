@@ -1,3 +1,25 @@
 <% today = Time.new.strftime('%A') %>
 <h1>Today is <%= today %>!</h1>
 <h2>Here are today's burger deals!</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Vendor</th>
+      <th>Deal</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+
+    <% for deal in @deals %>
+    <tr>
+    <td>
+    <a href="/today/<%= deal.id %>"><%= deal.get_vendor %></a></td>
+    <td><%= deal.title %></td>
+    <td>Soon, my precious</td>
+    </tr>
+    <% end %>
+
+  </tbody>
+</table>
