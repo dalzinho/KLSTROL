@@ -26,8 +26,8 @@ class LinkDealsBurgers
     return SqlRunner.run(sql).map { |deal| LinkDealsBurgers.new(result) }
   end
 
-  def burger_name
-    sql = "SELECT b.name FROM burgers b INNER JOIN link_burgers_and_deals l ON b.id = l.burger_id;"
+  def burger_name(search_id)
+    sql = "SELECT b.name FROM burgers b INNER JOIN link_burgers_and_deals l ON b.id = l.burger_id WHERE l.burger_id = #{search_id};"
     return SqlRunner.run(sql).first['name']
   end
 end

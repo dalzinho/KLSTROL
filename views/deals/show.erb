@@ -1,6 +1,6 @@
 <div class="edit-selection">
-  <h2><%= @deal.title %></h2>
-  <h3><%= @deal.get_vendor %></h3>
+  <h1><%= @deal.title %></h1>
+  <h2><%= @deal.get_vendor %></h2>
 
   <table>
     <thead>
@@ -11,7 +11,7 @@
     <tbody>
       <% for burger in @burgers %>
       <tr>
-        <td><%= burger.burger_name %></td>
+        <td><%= burger.burger_name(burger.id) %></td>
       </tr>
       <% end %>
     </tbody>

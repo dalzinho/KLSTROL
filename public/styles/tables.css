@@ -1,19 +1,37 @@
+.display-table {
+  display: flex;
+}
+
+
+
 table {
+  width: 600px;
   table-layout: fixed;
   border-collapse: collapse;
   border: 3px solid black;
+  color: black;
+}
+
+thead {
+  background-color: #FFDEDB;
+}
+
+th {
+  text-align: left;
+  font-weight: bold;
 }
 
 tbody tr:nth-child(odd) {
-  background-color: lime;
+  background-color: #C98681;
 }
 
 tbody tr:nth-child(even) {
-  background-color: pink;
+  background-color: #FFAAA3;
 }
 
 tbody tr a {
   text-decoration: none;
+  color: black;
 }
 
 tbody tr a:hover {
