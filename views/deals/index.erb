@@ -6,6 +6,7 @@
   <th>Deal Title</th>
   <th>Vendor</th>
   <th>Day</th>
+  <th>Description</th>
   </tr>
 </thead>
 <tbody>
@@ -16,6 +17,7 @@
 <td><a href="/deals/<%= deal.id %>"><%= deal.title %></a></td>
 <td><%= deal.get_vendor %></td>
 <td><%= deal.day %></td>
+<td><%= deal.description %></td>
 </tr>
 <% end %>
 </tbody>

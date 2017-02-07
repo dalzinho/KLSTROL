@@ -1,9 +1,37 @@
 <h2><%= @deal.get_vendor %> | <%= @deal.title %></h2>
 
 <table>
-<thead>
-<th>This</th>
-<th>That</th>
-<th>The other</th>
-</thead>
+  <thead>
+    <tr>
+      <th>Burger</th>
+      <th>Quantity</th>
+      <th>Price</th>
+      <th>Total Calories</th>
+      <th>KLSTROL Score &trade;</th>
+    </tr>
+  </thead>
+
+  <tbody>
+  <% for included in @included %>
+  
+  <tr>
+
+  <td><%= Burger.find(included.burger_id).name %></td>
+    <td><%= Deal.find(included.deal_id).burgers_included %></td>
+<td><%= Burger.find(included.burger_id).adjust_price(Deal.find(included.deal_id).price_adjustment) %></td>
+<td><%= Burger.find(included.burger_id).adjust_calorie_count(Deal.find(included.deal_id).burgers_included) %></td>
+<td><%= Burger.find(included.burger_id).k_score(Deal.find(included.deal_id).price_adjustment, Deal.find(included.deal_id).burgers_included) %></td>
+  </tr>
+
+
+  <% end %>
+    
+
+
+
+
+
+
+
+  </tbody>
 </table>

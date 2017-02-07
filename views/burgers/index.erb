@@ -5,6 +5,7 @@
     <tr>
       <th>Name</th>
       <th>Price</th>
+      <th>Calories</th>
       <th>Vendor</th>
     </tr>
   </thead>
@@ -15,6 +16,7 @@
       <a href="burgers/<%= burger.id %>"><%= burger.name %></a>
       </td>
       <td><%= burger.price %></td>
+      <td><%= burger.calories %></td>
       <td><%= burger.get_vendor_name %></td>
     </tr>
     <% end %>

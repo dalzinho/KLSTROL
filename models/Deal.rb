@@ -1,17 +1,21 @@
 class Deal
 
   attr_reader :id
-  attr_accessor :title, :vendor_id, :day
+  attr_accessor :title, :vendor_id, :day, :description, :burgers_included, :price_adjustment
 
   def initialize(options)
     @id = options['id']
     @title = options['title']
     @vendor_id = options['vendor_id']
     @day = options['day']
+    @description = options['description']
+    @burgers_included = options['burgers_included'].to_i
+    @price_adjustment = options['price_adjustment'].to_f
+
   end
 
   def save()
-    sql = "INSERT INTO deals (title, vendor_id, day) VALUES ('#{@title}', #{@vendor_id}, '#{@day}') RETURNING *;"
+    sql = "INSERT INTO deals (title, vendor_id, day, description, burgers_included, price_adjustment) VALUES ('#{@title}', #{@vendor_id}, '#{@day}', '#{@description}', #{@burgers_included}, #{@price_adjustment}) RETURNING *;"
     result = SqlRunner.run(sql)
     @id = result.first['id']
   end
@@ -23,7 +27,7 @@ class Deal
   end
 
   def self.update(options)
-    sql = "UPDATE deals SET (title, vendor_id, day) = ('#{options['title']}', #{options['vendor_id']}, '#{options['day']}') WHERE id = #{options['id']} ;"
+    sql = "UPDATE deals SET (title, vendor_id, day, description) = ('#{options['title']}', #{options['vendor_id']}, '#{options['day']}', '#{options['description']}') WHERE id = #{options['id']} ;"
     SqlRunner.run(sql)
   end
 
@@ -42,8 +46,8 @@ class Deal
     return SqlRunner.run(sql).first['name']
   end
 
-  def self.find(id)
-    sql = "SELECT * FROM deals WHERE id = #{id};"
+  def self.find(search_id)
+    sql = "SELECT * FROM deals WHERE id = #{search_id};"
     result = SqlRunner.run(sql).first
     return Deal.new(result)
   end

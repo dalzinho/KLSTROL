@@ -13,6 +13,11 @@
     </label>
 
     <label>
+    Calories:
+    <input type="number" name="calories" value="<%= @burger.calories %>">
+    </label>
+
+    <label>
       Where can you buy this tasty morsel?
       <select name="vendor_id">
         <% for vendor in Vendor.all %>

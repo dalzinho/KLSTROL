@@ -12,14 +12,19 @@ CREATE TABLE burgers(
   id SERIAL4 primary key,
   name VARCHAR(255),
   price NUMERIC(4,2),
-  vendor_id INT4 references vendors(id) ON DELETE CASCADE
+  calories INT4 not null,
+  vendor_id INT4 references vendors(id) ON DELETE CASCADE,
+  kcal_price_ratio NUMERIC(6,4)
 );
 
 CREATE TABLE deals(
   id SERIAL4 primary key,
   title VARCHAR(255),
   vendor_id INT4 references vendors(id) ON DELETE CASCADE,
-  day VARCHAR(255)
+  day VARCHAR(255),
+  description TEXT,
+  burgers_included INT2,
+  price_adjustment NUMERIC(4,2)
 );
 
 CREATE TABLE link_burgers_and_deals (
