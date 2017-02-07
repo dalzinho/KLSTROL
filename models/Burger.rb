@@ -9,7 +9,7 @@ class Burger
     @price = options['price'].to_f
     @calories = options['calories'].to_i
     @vendor_id = options['vendor_id'].to_i
-    @kcal_price_ratio = options['calories'].to_f / options['price'].to_f
+    @kcal_price_ratio = options['calories'].to_f / options['price'].to_f.round(3)
   end
 
   def save()

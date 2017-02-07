@@ -14,7 +14,7 @@ CREATE TABLE burgers(
   price NUMERIC(4,2),
   calories INT4 not null,
   vendor_id INT4 references vendors(id) ON DELETE CASCADE,
-  kcal_price_ratio NUMERIC(6,4)
+  kcal_price_ratio NUMERIC(10,4)
 );
 
 CREATE TABLE deals(

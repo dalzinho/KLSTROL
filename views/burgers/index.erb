@@ -6,6 +6,7 @@
       <th>Name</th>
       <th>Price</th>
       <th>Calories</th>
+      <th>K-Score</th>
       <th>Vendor</th>
     </tr>
   </thead>
@@ -17,6 +18,7 @@
       </td>
       <td><%= burger.price %></td>
       <td><%= burger.calories %></td>
+      <td><%= burger.k_score(1, 1) %></td>
       <td><%= burger.get_vendor_name %></td>
     </tr>
     <% end %>
