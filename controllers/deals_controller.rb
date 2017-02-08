@@ -27,7 +27,7 @@ end
 
 post '/deals/:id/add' do
   @deal = Deal.find(params[:id])
-  # @burgers = Burger.get_by_vendor(@deal.vendor_id)
+  @burgers = Burger.get_by_vendor(@deal.vendor_id)
   @link = LinkDealsBurgers.new(params)
   @link.save
   redirect to ("/deals/#{params[:id]}")
@@ -40,7 +40,7 @@ end
 
 get '/deals/:id' do
   @deal = Deal.find(params[:id])
-  @burgers = LinkDealsBurgers.find(params[:id])
+  @burgers = LinkDealsBurgers.burgers(params[:id])
   erb(:"deals/show")
 end
 

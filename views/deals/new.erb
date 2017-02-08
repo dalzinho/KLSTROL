@@ -5,7 +5,7 @@
   </label>
 
   <label>
-    Burger:
+    Vendor:
     <select name="vendor_id">
       <% for deal in Deal.all() %>
       <option value="<%= deal.vendor_id %>"> <%= deal.get_vendor %></option>

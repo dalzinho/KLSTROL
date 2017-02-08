@@ -23,11 +23,11 @@ class LinkDealsBurgers
 
   def self.all()
     sql = "SELECT * FROM link_burgers_and_deals;"
-    return SqlRunner.run(sql).map { |deal| LinkDealsBurgers.new(result) }
+    return SqlRunner.run(sql).map { |deal| LinkDealsBurgers.new(deal) }
   end
 
-  def burger_name(search_id)
-    sql = "SELECT b.name FROM burgers b INNER JOIN link_burgers_and_deals l ON b.id = l.burger_id WHERE l.burger_id = #{search_id};"
-    return SqlRunner.run(sql).first['name']
+  def self.burgers(search_id)
+    sql = "SELECT * FROM burgers b INNER JOIN link_burgers_and_deals l ON b.id = l.burger_id WHERE l.deal_id = #{search_id};"
+    return SqlRunner.run(sql).map {|burger| Burger.new(burger)}
   end
 end
