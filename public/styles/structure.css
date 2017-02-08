@@ -1,86 +1,65 @@
 body {
-
   background: #ff6356 url('/images/burger.jpeg');
   background-size: 100%;
   font-family: 'Oswald', sans-serif;
 }
 
-
-body a {
-  text-decoration: none;
-  font-family: inherit;
-
-}
-
-.header {
+.title-nav-container {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: space-around;
   flex-wrap: wrap;
-
-
-
+  /*border: 10px solid yellow;*/
 }
 
-.site-header {
-  align-items: center;
-  width: auto;
-  padding: 20px;
-
-
-
+.title-nav-container a,
+.title-nav-container a:link,
+.title-nav-container a:visited {
+  text-decoration: none;
+  color: #ffaaa3;
 }
 
-.header h1 {
+.title-nav-container a:hover,
+.title-nav-container a:active,
+.title-nav-container a:focus {
+  color: yellow;
+}
 
-  display: flex;
-  font-size: 15vh;
+.title-nav-container h1 {
   font-family: 'Passion One', sans-serif;
+  font-size: 100px;
   font-style: italic;
   letter-spacing: -2px;
-  justify-content: center;
-  color: #2E1F1D;
+  color: #2e1f1d;
+  margin: 0;
 }
 
-.site-header a {
-  text-decoration: none;
-
-}
-
-
-
-.nav-bar {
+.title-nav-container nav {
   display: flex;
-  border-radius: 10px;
-  background-color: #2E1F1D;
-  color: #ffaaa3;
-  width: auto;
-  justify-content: space-around;
-
+  background-color: #2e1f1d;
+  background: rgba(0,0,0,0.4);
+  border-radius: 15px;
+  padding: 10px;
 }
 
-.nav-bar ul {
+.title-nav-container ul {
   display: flex;
-  flex-direction: row;
- 
-
-}
-
-.nav-bar li {
   list-style-type: none;
-  padding: 15px;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+  font-size: 35px;
 }
 
-.nav-bar a {
-  text-decoration: none;
-  color: #ffaaa3;
+
+
+.title-nav-container li {
+  margin: 0 10px;
+  text-transform: uppercase;
+  font-style: italic;
 }
-
-
-
-
 
 .main {
+  margin: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -89,20 +68,26 @@ body a {
   border-radius: 15px;
   background: rgba(0, 0, 0, 0.4);
   color: #ff6356;
-
 }
 
 .main h1 {
-  color: #ff6356;
-  letter-spacing: 0px;
+  font-family: 'Passion One', sans-serif;
+  font-size: 100px;
+  font-style: italic;
   font-weight: lighter;
-}
-
-.main h2 {
   color: #ff6356;
+  margin: 0;
 }
 
-.main a {
+.main a,
+.main a:link,
+.main a:visited {
   text-decoration: none;
   color: #ff6356;
+}
+
+.main a:hover,
+.main a:active,
+.main a:focus {
+  color: yellow;
 }

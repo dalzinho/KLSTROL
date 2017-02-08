@@ -6,6 +6,7 @@
 
   <link rel="stylesheet" type="text/css" href="/styles/structure.css">
   <link rel="stylesheet" type="text/css" href="/styles/tables.css">
+  <link rel="stylesheet" type="text/css" href="/styles/forms.css">
   <link href="https://fonts.googleapis.com/css?family=Passion+One|Oswald" rel="stylesheet">
 
 </head>
@@ -13,15 +14,14 @@
 <!-- header contains left-nav, site name and right-nav -->
 <body>
 
-  <div class="header">
-
-    <div class="site-header">
-      <a href = "/">
+  <div class="title-nav-container">
+      <a href="/">
         <h1>KLSTROL</h1>
       </a>
-    </div>
+  
 
-    <div class="nav-bar">
+
+
       <nav>
         <ul>
           <li>
@@ -39,11 +39,12 @@
           <li><a href = "/deals">Deals</a></li>
         </ul>
       </nav>
-    </div>
+  </div>
+
     <div class="main">
       <%= yield %>
     </div>
-  </div>
+  
 </body>
 </html>
 
