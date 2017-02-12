@@ -29,12 +29,15 @@ tbody tr:nth-child(even) {
   background-color: #FFAAA3;
 }
 
-tbody tr a {
+td a,
+td a:link,
+td a:visited {
   text-decoration: none;
   color: black;
 }
 
-tbody tr a:hover {
+td a:hover,
+td a:active,
+td a:focus {
   color: yellow;
-  text-shadow: 5px 5px 5px;
 }

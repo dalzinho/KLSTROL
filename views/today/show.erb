@@ -23,6 +23,8 @@
 <td><%= Burger.find(included.burger_id).k_score(Deal.find(included.deal_id).price_adjustment, Deal.find(included.deal_id).burgers_included) %></td>
   </tr>
 
+  <!-- my most sincere apologies for the manky hack above, dear code reviewer -->
+
 
   <% end %>
     

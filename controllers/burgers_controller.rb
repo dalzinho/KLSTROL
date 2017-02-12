@@ -14,7 +14,7 @@ end
 post '/burgers' do
 @burger = Burger.new(params)
 @burger.save
-return "saved!"
+# return "saved!"
 redirect to ('/burgers')
   end
 

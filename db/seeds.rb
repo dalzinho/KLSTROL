@@ -42,7 +42,7 @@ require 'pry-byebug'
 
 @deal4 = Deal.new({'title' => 'Thunderthighs Thursday', 'vendor_id' => 1, 'day' => 'Thursday', 'description' => "buy one, get one free!", 'burgers_included' => 2, 'price_adjustment' => 1})
   
-# @deal2 = Deal.new({'title' => 'Cheeky Tuesday', 'vendor_id' => 2, 'day' => 'Tuesday'})
+@deal5 = Deal.new({'title' => 'Super Sunday', 'vendor_id' => 1, 'day' => 'Sunday', 'description' => "buy one get one free!", 'burgers_included' => 2, 'price_adjustment' => 1})
 # @deal3 = Deal.new({'title' => 'Waistline Wednesday', 'vendor_id' => 3, 'day' => 'Wednesday'})
 # @deal4 = Deal.new({'title' => 'Thank Thursday', 'vendor_id' => 4, 'day' => 'Thursday'})
 # @deal5 = Deal.new({'title' => 'Big Fat Friday', 'vendor_id' => 5, 'day' => 'Friday'})
@@ -51,11 +51,11 @@ require 'pry-byebug'
 @deal2.save
 @deal3.save
 @deal4.save
-# @deal5.save
+@deal5.save
 
 @link1 = LinkDealsBurgers.new({'deal_id' => 1, 'burger_id' => 1})
 @link2 = LinkDealsBurgers.new({'deal_id' => 1, 'burger_id' => 2})
-@link3 = LinkDealsBurgers.new({'deal_id' => 1, 'burger_id' => 3})
+@link3 = LinkDealsBurgers.new({'deal_id' => 1, 'burger_id' => 3, 'description' => 'Two for the price of one'})
 
 @link1.save
 @link2.save
@@ -80,6 +80,14 @@ require 'pry-byebug'
 @link1 = LinkDealsBurgers.new({'deal_id' => 4, 'burger_id' => 1})
 @link2 = LinkDealsBurgers.new({'deal_id' => 4, 'burger_id' => 2})
 @link3 = LinkDealsBurgers.new({'deal_id' => 4, 'burger_id' => 3})
+
+@link1.save
+@link2.save
+@link3.save
+
+@link1 = LinkDealsBurgers.new({'deal_id' => 5, 'burger_id' => 1})
+@link2 = LinkDealsBurgers.new({'deal_id' => 5, 'burger_id' => 2})
+@link3 = LinkDealsBurgers.new({'deal_id' => 5, 'burger_id' => 3})
 
 @link1.save
 @link2.save

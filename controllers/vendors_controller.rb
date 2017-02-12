@@ -15,7 +15,7 @@ end
 post '/vendors' do
   @vendor = Vendor.new(params)
   @vendor.save
-  return "saved"
+  redirect to ('/vendors')
 end
 
 get '/vendors/:id' do
